@@ -82,7 +82,7 @@
                 <a class="navbar-brand" href="/"
                   ><span class="India Certify"></span>
                   <img
-                    src="/images/logo.svg"
+                    src="logo.svg"
                     height="38"
                     alt="India Certify logo"
                   />
@@ -880,22 +880,32 @@
 
     <!-- Hero Section with GST Registration Button -->
     <div class="relative bg-gray-900 text-white">
-      <div class="absolute inset-0 bg-black opacity-60"></div>
-      <div
-        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 hero-bg"
-      >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- <div class="absolute py-10"></div> -->
+      <div class="hero">
+        <div class="grid lg:grid-cols-2 gap-12">
           <div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-              GST Registration
-            </h1>
-            <p class="text-lg md:text-xl mb-8">
+            <h1 class="font-bold">GST Registration</h1>
+            <p class="md:text-xl">
               GST registration is mandatory for businesses in India whose
               revenue exceeds specified thresholds or falls under certain
               categories requiring GST compliance. We offer seamless assistance
               to help you obtain your GST registration, ensuring compliance with
               GST regulations.
             </p>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button id="watchVideoBtn" class="btn1 btn-blue">
+                <i data-lucide="play" class="icon1"></i>
+                Click to watch 60 seconds video
+              </button>
+
+              <button id="viewAgreementBtn" class="btn1 btn-gray">
+                <i data-lucide="file-text" class="icon1"></i>
+                View sample Certificate / Agreement
+              </button>
+            </div>
+
             <button
               id="gstRegistrationBtn"
               class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-md text-lg flex items-center transition-all duration-300 transform hover:scale-105"
@@ -909,25 +919,20 @@
           <div class="eligibility-checker">
             <div class="eligibility-checker-container">
               <div class="eligibility-checker-header">
-                <i
-                  data-lucide="check-circle"
-                  class="h-6 w-6 text-white mr-2"
-                ></i>
-                <h2 class="text-xl font-semibold text-white">
-                  Check GST Eligibility
-                </h2>
+                <i data-lucide="check-circle" class="text-white mr-2"></i>
+                <h4 class="font-semibold text-white">Check GST Eligibility</h4>
               </div>
               <div class="eligibility-checker-content">
-                <p class="text-sm text-gray-600 mb-4">
+                <p>
                   Find out if your business needs to register for GST based on
                   your business type and turnover.
                 </p>
 
-                <form id="eligibilityForm" class="space-y-4">
+                <form id="eligibilityForm" class="space-y-2">
                   <div>
                     <label
                       for="businessType"
-                      class="block text-sm font-medium text-gray-700 mb-1"
+                      class="block text-sm font-medium text-gray-700"
                     >
                       Business Type
                     </label>
@@ -947,7 +952,7 @@
                   <div>
                     <label
                       for="annualTurnover"
-                      class="block text-sm font-medium text-gray-700 mb-1"
+                      class="block text-sm font-medium text-gray-700"
                     >
                       Annual Turnover (₹)
                     </label>
@@ -967,7 +972,7 @@
                   <div>
                     <label
                       for="state"
-                      class="block text-sm font-medium text-gray-700 mb-1"
+                      class="block text-sm font-medium text-gray-700"
                     >
                       State
                     </label>
@@ -1022,14 +1027,14 @@
                   <button
                     type="button"
                     id="checkEligibilityBtn"
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 flex items-center justify-center"
+                    class="w-full bg-indigo-600 py-10 hover:bg-indigo-700 text-white font-medium rounded-md transition-colors duration-300 flex items-center justify-center"
                   >
                     Check Eligibility
                     <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
                   </button>
                 </form>
 
-                <div id="eligibilityResult" class="mt-4 p-4 rounded-md hidden">
+                <div id="eligibilityResult" class="mt-3 p-2 rounded-md hidden">
                   <div id="eligibleResult" class="hidden">
                     <div class="flex items-start">
                       <i
@@ -1037,9 +1042,9 @@
                         class="h-5 w-5 text-green-500 mr-2 flex-shrink-0"
                       ></i>
                       <div>
-                        <h3 class="text-sm font-medium text-gray-900">
+                        <h2 class="text-sm font-medium text-gray-900">
                           GST Registration Required
-                        </h3>
+                        </h2>
                         <p class="text-xs text-gray-600 mt-1">
                           Based on your inputs, your business needs to register
                           for GST. Click the GST Registration button to start
@@ -1093,6 +1098,47 @@
         </div>
       </div>
     </div>
+
+     <!-- Video Popup -->
+     <div id="videoPopup" class="popup hidden">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3>GST Registration Process</h3>
+          <button class="close-btn" onclick="closeVideoPopup()">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="popup-body">
+          <div class="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/_wCOh5LU0fU"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agreement Popup -->
+    <div id="agreementPopup" class="popup hidden">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h3>Sample Certificate / Agreement</h3>
+          <button class="close-btn" onclick="closeAgreementPopup()">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="popup-body">
+          <iframe
+            src="/images/gst-certificate.jpg"
+            class="agreement-frame"
+            title="Agreement Document"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- GST Registration Online Section -->
     <section class="gst-online-section">
       <div class="container">
@@ -1222,14 +1268,38 @@
               <ul class="director-proof-list">
                 <li>Telephone or Electricity Bill</li>
                 <li>Bank Account Statement</li>
+              </ul>
+              <ul class="director-proof-list">
                 <li>Passport</li>
                 <li>Aadhar Card</li>
               </ul>
-
               <ul class="director-proof-list">
                 <li>Driving License</li>
                 <li>Ration Card</li>
+              </ul>
+              <ul class="director-proof-list">
                 <li>Voter Identity Card</li>
+              </ul>
+            </div>
+
+            <div class="termsandcondition">
+              <h6>Terms & conditions</h6>
+
+              <p>
+                <strong>Note:</strong> All documents must be self-attested by
+                the applicant.
+              </p>
+              <ul>
+                <li>
+                  Government fee(Company/TradeMark Registration), DSC token and
+                  courier charges are extra which will be collected after expert
+                  consultation
+                </li>
+                <li>
+                  Our promise for application filing(SPICe+) time depends onMCA
+                  portal availability
+                </li>
+                <li>Each additional DSC will cost ₹2000+ taxes</li>
               </ul>
             </div>
           </div>
@@ -1237,7 +1307,7 @@
       </div>
     </div>
 
-    <main class="container">
+    <main class="containerMain">
       <!-- GST Registration Form Section -->
       <div id="registration-form" class="form-container">
         <!-- Progress Indicator -->
@@ -1249,6 +1319,7 @@
               <div class="progress-step active" data-step="1"></div>
               <div class="progress-step" data-step="2"></div>
               <div class="progress-step" data-step="3"></div>
+              <div class="progress-step" data-step="4"></div>
             </div>
           </div>
         </div>
@@ -1260,7 +1331,6 @@
             <p class="form-description">
               Please provide your business details for GST registration.
             </p>
-
             <div class="form-grid">
               <div class="form-group">
                 <label for="businessName">Business Name</label>
@@ -1491,6 +1561,18 @@
                 </p>
               </div>
 
+              <div class="whatsapp-integration">
+                <span>Get easy updates through</span>
+                <svg class="whatsapp-icon" viewBox="0 0 24 24" width="18" height="18">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                </svg>
+                <span>WhatsApp</span>
+                <label class="switch">
+                    <input type="checkbox" id="whatsappToggle">
+                    <span class="slider round"></span>
+                </label>
+              </div>
+
               <div class="terms-container">
                 <div class="checkbox-wrapper">
                   <input
@@ -1510,6 +1592,156 @@
                     providing false information may result in rejection of my
                     application.
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 4: Document Upload and Payment -->
+          <div class="form-step hidden" id="step-4">
+            <h3>Document Upload</h3>
+            <p class="form-description">
+              Please upload required documents and select your payment method.
+            </p>
+
+            <!-- Document Upload Progress -->
+            <div class="upload-progress">
+              <div class="progress-circle">
+                <svg>
+                  <circle cx="40" cy="40" r="35"></circle>
+                  <circle cx="40" cy="40" r="35" class="progress"></circle>
+                </svg>
+                <div class="progress-number">
+                  <span id="documents-uploaded">0</span>
+                  <span>/5</span>
+                </div>
+              </div>
+              <div class="progress-text">
+                <h4>Upload Progress</h4>
+                <p id="upload-status-text">No documents uploaded yet</p>
+              </div>
+            </div>
+
+            <!-- Document Upload Section -->
+            <div class="document-upload-section">
+              <div class="document-grid">
+                <div class="document-card" data-document="pan">
+                  <div class="document-icon1">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <div class="document-info">
+                      <h4>PAN Card</h4>
+                      <p>Upload your PAN card</p>
+                    </div>
+                  </div>
+                  <div class="upload-status">
+                    <label class="upload-btn">
+                      <span class="btn-text">Upload File</span>
+                      <input
+                        type="file"
+                        class="file-input"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                      />
+                    </label>
+                    <div class="status-indicator">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span class="status-text"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="document-card" data-document="aadhar">
+                  <div class="document-icon1">
+                    <i class="fa-solid fa-address-card"></i>
+                    <div class="document-info">
+                      <h4>Aadhar Card</h4>
+                      <p>Upload your Aadhar card</p>
+                    </div>
+                  </div>
+                  <div class="upload-status">
+                    <label class="upload-btn">
+                      <span class="btn-text">Upload File</span>
+                      <input
+                        type="file"
+                        class="file-input"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                      />
+                    </label>
+                    <div class="status-indicator">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span class="status-text"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="document-card" data-document="business">
+                  <div class="document-icon1">
+                    <i class="fa-solid fa-building"></i>
+                    <div class="document-info">
+                      <h4>Business Registration</h4>
+                      <p>Upload registration certificate</p>
+                    </div>
+                  </div>
+                  <div class="upload-status">
+                    <label class="upload-btn">
+                      <span class="btn-text">Upload File</span>
+                      <input
+                        type="file"
+                        class="file-input"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                      />
+                    </label>
+                    <div class="status-indicator">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span class="status-text"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="document-card" data-document="address">
+                  <div class="document-icon1">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="document-info">
+                      <h4>Address Proof</h4>
+                      <p>Upload address verification</p>
+                    </div>
+                  </div>
+                  <div class="upload-status">
+                    <label class="upload-btn">
+                      <span class="btn-text">Upload File</span>
+                      <input
+                        type="file"
+                        class="file-input"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                      />
+                    </label>
+                    <div class="status-indicator">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span class="status-text"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="document-card" data-document="bank">
+                  <div class="document-icon1">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <div class="document-info">
+                      <h4>Bank Statement</h4>
+                      <p>Upload bank statement</p>
+                    </div>
+                  </div>
+                  <div class="upload-status">
+                    <label class="upload-btn">
+                      <span class="btn-text">Upload File</span>
+                      <input
+                        type="file"
+                        class="file-input"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                      />
+                    </label>
+                    <div class="status-indicator">
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span class="status-text"></span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1536,55 +1768,6 @@
           </div>
         </form>
       </div>
-
-      <!-- Benefits Section -->
-      <div class="benefits-container">
-        <div class="benefits-header">
-          <h2>Benefits of GST Registration</h2>
-        </div>
-        <div class="benefits-grid">
-          <div class="benefit-item">
-            <i class="fa-solid fa-circle-check benefit-icon"></i>
-            <div>
-              <h3>Legal Recognition</h3>
-              <p>
-                Get legal recognition for your business and build credibility
-                with customers and suppliers.
-              </p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <i class="fa-solid fa-circle-check benefit-icon"></i>
-            <div>
-              <h3>Input Tax Credit</h3>
-              <p>
-                Claim input tax credit on purchases, reducing your overall tax
-                burden.
-              </p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <i class="fa-solid fa-circle-check benefit-icon"></i>
-            <div>
-              <h3>Seamless Interstate Business</h3>
-              <p>
-                Conduct business across state borders without additional
-                complications.
-              </p>
-            </div>
-          </div>
-          <div class="benefit-item">
-            <i class="fa-solid fa-circle-check benefit-icon"></i>
-            <div>
-              <h3>Enhanced Business Opportunities</h3>
-              <p>
-                Access to larger businesses that prefer to work with
-                GST-registered vendors.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
 
     <!-- Sticky Navigation -->
@@ -1599,7 +1782,7 @@
             Eligibility
           </button>
           <button class="nav-link" data-section="documents">
-            Documents Required
+            ----------------
           </button>
           <button class="nav-link" data-section="benefits">Benefits</button>
           <button class="nav-link" data-section="process">
@@ -1637,7 +1820,7 @@
         </p>
       </section>
 
-      <section id="definition" class="content-section">
+      <section id="definition" class="content-section1">
         <h2>Definition</h2>
         <p>
           A Shop and Establishment Certificate is a legal document that
@@ -1663,7 +1846,7 @@
         </ul>
       </section>
 
-      <section id="documents" class="content-section">
+      <!-- <section id="documents" class="content-section">
         <h2>Documents Required</h2>
         <div class="document-groups">
           <div class="document-group">
@@ -1687,37 +1870,64 @@
             </ul>
           </div>
         </div>
-      </section>
+      </section> -->
 
-      <section id="benefits" class="content-section">
-        <h2>Benefits</h2>
+      <section id="benefits" class="content-section1">
+        <h2>Benefits of GST Registration</h2>
         <div class="benefits-grid">
-          <div class="benefit-group">
-            <h3>Legal Compliance</h3>
-            <ul>
-              <li>Ensures compliance with labor laws</li>
-              <li>Protects against legal penalties</li>
-              <li>Demonstrates business legitimacy</li>
-            </ul>
-          </div>
-          <div class="benefit-group">
-            <h3>Business Growth</h3>
-            <ul>
-              <li>Easier access to business loans</li>
-              <li>Enhanced credibility with customers</li>
-              <li>Simplified business expansion</li>
-            </ul>
+          <!-- Benefits Section -->
+          <div class="benefits-container">
+            <div class="benefit-item">
+              <i class="fa-solid fa-circle-check benefit-icon"></i>
+              <div>
+                <h3>Legal Recognition</h3>
+                <p>
+                  Get legal recognition for your business and build credibility
+                  with customers and suppliers.
+                </p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-circle-check benefit-icon"></i>
+              <div>
+                <h3>Input Tax Credit</h3>
+                <p>
+                  Claim input tax credit on purchases, reducing your overall tax
+                  burden.
+                </p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-circle-check benefit-icon"></i>
+              <div>
+                <h3>Seamless Interstate Business</h3>
+                <p>
+                  Conduct business across state borders without additional
+                  complications.
+                </p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <i class="fa-solid fa-circle-check benefit-icon"></i>
+              <div>
+                <h3>Enhanced Business Opportunities</h3>
+                <p>
+                  Access to larger businesses that prefer to work with
+                  GST-registered vendors.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="process" class="content-section">
+      <section id="process" class="content-section2">
         <h2>Registration Process</h2>
-        <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
           <!-- Step-by-Step Guide Section -->
-          <div class="step-guide-container mb-12">
+          <div class="step-guide-container">
             <div class="step-guide-header">
-              <h2 class="step-guide-title" style="color: aliceblue;">
+              <h2 class="step-guide-title" >
                 Step-by-Step Guide For GST Registration Process
               </h2>
             </div>
@@ -1726,9 +1936,11 @@
                 Here are 4 steps to complete your online GST registration
                 process:
               </p>
-
+            </div>
+          </div>
+          <main class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 py-10">
               <div class="relative">
-                <div class="hidden md:block step-connector"></div>
+                <div class="md:block step-connector"></div>
                 <div
                   class="flex flex-col md:flex-row justify-between items-center"
                 >
@@ -1751,7 +1963,7 @@
                   </div>
 
                   <!-- Arrow -->
-                  <div class="hidden md:block step-arrow">
+                  <div class="md:block step-arrow">
                     <i data-lucide="chevron-right" class="h-6 w-6"></i>
                   </div>
 
@@ -1774,7 +1986,7 @@
                   </div>
 
                   <!-- Arrow -->
-                  <div class="hidden md:block step-arrow">
+                  <div class=" md:block step-arrow">
                     <i data-lucide="chevron-right" class="h-6 w-6"></i>
                   </div>
 
@@ -1791,15 +2003,38 @@
                     <div class="text-center">
                       <p class="step-number font-semibold">Step 3</p>
                       <p class="step-description">
-                        Filing for GST Registration
+                        Provide Required Document
                       </p>
                     </div>
                   </div>
 
                   <!-- Arrow -->
-                  <div class="hidden md:block step-arrow">
+                  <div class="md:block step-arrow">
                     <i data-lucide="chevron-right" class="h-6 w-6"></i>
                   </div>
+
+                   <!-- Step 4 -->
+                   <div
+                   class="step-item flex flex-col items-center mb-6 md:mb-0"
+                 >
+                   <div class="step-icon-container bg-red-100">
+                     <i
+                       data-lucide="file-plus-2"
+                       class="step-icon text-red-500"
+                     ></i>
+                   </div>
+                   <div class="text-center">
+                     <p class="step-number font-semibold">Step 4</p>
+                     <p class="step-description">
+                       Filing for GST Registration
+                     </p>
+                   </div>
+                 </div>
+
+                 <!-- Arrow -->
+                 <div class="md:block step-arrow">
+                   <i data-lucide="chevron-right" class="h-6 w-6"></i>
+                 </div>
 
                   <!-- Step 4 -->
                   <div class="step-item flex flex-col items-center">
@@ -1810,15 +2045,55 @@
                       ></i>
                     </div>
                     <div class="text-center">
-                      <p class="step-number font-semibold">Step 4</p>
+                      <p class="step-number font-semibold">Step 5</p>
                       <p class="step-description">Get your GSTIN</p>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
         </main>
+        <div class="step-points">
+          <div class="step-point1">
+            <h3>1: Get in touch with our experts</h3>
+            <p>
+              Contact our legal experts to understand the GST registration
+              process and get assistance in filing the application.
+            </p>
+          </div>
+          <div class="step-point2">
+            <h3>2: Provide Business Information</h3>
+            <p>
+              Fill out the online application form with your business details to initiate the registration process,
+              provide the required GST registration documents and fill in essential business details.
+              including Business, Business location, Mbile Number, Email-id, PAN, address, and contact information.
+            </p>
+          </div>
+          <div class="step-point3">
+            <h3>3: Provide Required Document</h3>
+            <p>
+              Fill out the online application form with your business details to initiate the registration process,
+              provide the required GST registration documents and fill in essential business details.
+              including Business, Business location, Mbile Number, Email-id, PAN, address, and contact information.
+            </p>
+          </div>
+          <div class="step-point4">
+            <h3>4: Filing for GST Registration</h3>
+            <p>
+              Submit the application form along with the necessary documents to the GST portal for verification.
+              Once the documents are verified, and Once the application is submitted, you will receive an OTP for verificatiion to proceed further and
+              you will receive a GSTIN and a registration certificate.
+            </p>
+          </div>
+            <div class="step-point5">
+              <h3>5: Get your GSTIN</h3>
+              <p>
+                Our team will provide an Application Reference Number (ARN) after verification, allowing you to track your status.
+                The GST certificate will be issued by the government via the official website. Indiacertify will guide you through the process,
+                ensuring timely document submission and clarity on any applicable security deposits.
+                Once the application is approved, you will receive a GSTIN and a registration certificate, which is valid for 5 years.
+              </p>
+            </div>
+        </div>
       </section>
 
       <section id="compliance" class="content-section">
@@ -1845,7 +2120,7 @@
         </div>
       </section>
 
-      <section id="why" class="content-section">
+      <section id="why" class="content-section1">
         <h2>Why IndiaCertify?</h2>
         <div class="why-grid">
           <div class="why-card">
@@ -1875,40 +2150,348 @@
         </div>
       </section>
 
-      <section id="faqs" class="content-section">
-        <h2>FAQs</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <h3>How long does it take to get the certificate?</h3>
-            <p>
-              The process typically takes 15-30 working days, depending on the
-              state and documentation completeness.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>Is the certificate valid pan-India?</h3>
-            <p>
-              No, the certificate is state-specific. You need separate
-              registrations for different states.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>What is the validity period?</h3>
-            <p>
-              The validity varies by state, typically ranging from 1 to 5 years,
-              after which renewal is required.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>Can I apply online?</h3>
-            <p>
-              Yes, many states now offer online application facilities through
-              their respective portals.
-            </p>
+      <section id="faqs" class="content-section2">
+        <div class="indiacerty-section">
+          <div class="indiacerty-content">
+            <div class="indiacerty-image">
+              <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Vakilsearch Representative">
+            </div>
+            <div class="indiacerty-text">
+              <h2>Why IndiaCertify for GST Registration?</h2>
+              <p>Registering a Company is a significant step toward building your business in India. While the process involves steps like obtaining a Digital Signature Certificate (DSC), a Director Identification Number (DIN), and filing the SPICe+ form, it can feel overwhelming without the right guidance.</p>
+              <p>That's where Indiacertify comes in. We make the process simple and stress-free by handling all the details for you. From preparing and submitting accurate documents to ensuring full compliance with the Companies Act, 2013, our team is here to support you every step of the way.</p>
+              <p>We also take care of all post-registration essentials, including obtaining your PAN, TAN, GST Registration, and assisting with annual filings to ensure your business stays compliant.</p>
+              <div class="indiacerty-cta">
+                <button class="primary-button">Get Started Now</button>
+                <button class="secondary-button">Learn More</button>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="containerfooterabove">
+          <div class="headerlast">
+            <h1>Frequently Asked Questions</h1>
+            <p class="subtitle">Everything you need to know about registering a GST Registration</p>
+          </div>
+          
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What is the minimum requirement to register a Private Limited Company in India?</span>
+                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>To register a Private Limited Company in India, you need at least 2 directors and 2 shareholders (can be the same people), minimum capital of ₹1, and a registered office address. Directors must have valid DIN and at least one director should be an Indian resident.</p>
+              </div>
+            </div>
+  
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can a Private Limited Company operate multiple businesses?</span>
+                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, a Private Limited Company can operate multiple businesses under the same company, provided the business activities are mentioned in the Memorandum of Association (MOA) of the company.</p>
+              </div>
+            </div>
+  
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What documents are required for Private Limited Company registration?</span>
+                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Required documents include PAN cards and ID proofs of directors, address proof of registered office, passport-size photographs of directors, and digital signatures of directors. Additional documents may be required based on specific circumstances.</p>
+              </div>
+            </div>
+  
+            <div class="faq-item">
+              <button class="faq-question">
+               <span>Can foreign nationals or NRIs be directors in a Private Limited Company?</span>
+                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, foreign nationals and NRIs can be directors in a Private Limited Company. However, at least one director must be a resident Indian, meaning they have stayed in India for at least 182 days in the previous calendar year.</p>
+              </div>
+            </div>
+  
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can I use my residential address as my company's registered office?</span>
+                <svg class="chevron" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, you can use your residential address as your company's registered office address. However, you need to provide proper proof of address and may need NOC from the owner if you're living in a rented property.</p>
+              </div>
+            </div>
+          </div>
+       </div>
       </section>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="containerLast1">
+        <!-- Footer Navigation Section -->
+        <div class="footer-nav">
+          <div class="nav-section">
+            <h3>Products</h3>
+            <ul>
+              <li><a href="#">IDEs</a></li>
+              <li><a href="#">.NET & Visual Studio</a></li>
+              <li><a href="#">Team Tools</a></li>
+              <li><a href="#">Plugins</a></li>
+              <li><a href="#">Education</a></li>
+              <li><a href="#">Languages</a></li>
+              <li><a href="#">All products</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-section">
+            <h3>Solutions</h3>
+            <ul>
+              <li><a href="#">C++ Tools</a></li>
+              <li><a href="#">Data Tools</a></li>
+              <li><a href="#">DevOps</a></li>
+              <li><a href="#">Education</a></li>
+              <li><a href="#">Game Development</a></li>
+              <li><a href="#">Software Development</a></li>
+              <li><a href="#">Tools For Business</a></li>
+              <li><a href="#">Quality Assurance</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-logo">
+            <img src="/images/Final Word-25.png" alt="India Certify Logo" />
+          </div>
+
+          <div class="nav-section">
+            <h3>Initiatives</h3>
+            <ul>
+              <li><a href="#">Kotlin</a></li>
+              <li><a href="#">JetBrains Mono</a></li>
+              <li><a href="#">JetBrains Research</a></li>
+              <li><a href="#">Open Source Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-section">
+            <h3>Community</h3>
+            <ul>
+              <li><a href="#">Academic Licensing</a></li>
+              <li><a href="#">Open Source Support</a></li>
+              <li><a href="#">User Groups</a></li>
+              <li><a href="#">Events Partnership</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-section">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Sales Support</a></li>
+              <li><a href="#">Product Support</a></li>
+              <li><a href="#">Licensing FAQ</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Early Access</a></li>
+              <li><a href="#">Events and Webinars</a></li>
+              <li><a href="#">Newsletters</a></li>
+              <li><a href="#">Industry Reports</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-section">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contacts</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Customers & Awards</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Partners and Resellers</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bottom-bar">
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Facebook">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Twitter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="LinkedIn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect width="4" height="12" x="2" y="9" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="YouTube">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Medium">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" x2="12" y1="1" y2="3" />
+                <line x1="12" x2="12" y1="21" y2="23" />
+                <line x1="4.22" x2="5.64" y1="4.22" y2="5.64" />
+                <line x1="18.36" x2="19.78" y1="18.36" y2="19.78" />
+                <line x1="1" x2="3" y1="12" y2="12" />
+                <line x1="21" x2="23" y1="12" y2="12" />
+                <line x1="4.22" x2="5.64" y1="19.78" y2="18.36" />
+                <line x1="18.36" x2="19.78" y1="5.64" y2="4.22" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="RSS">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 11a9 9 0 0 1 9 9" />
+                <path d="M4 4a16 16 0 0 1 16 16" />
+                <circle cx="5" cy="19" r="1" />
+              </svg>
+            </a>
+          </div>
+          <div class="language-selector">
+            <div class="selector-button" id="countrySelector">
+              United States
+            </div>
+            <div class="selector-button" id="languageSelector">English</div>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+          <p class="copyright">
+            © <span id="current-year"></span> Your Company Name. All rights
+            reserved.
+          </p>
+          <p class="legal">
+            This website is designed to provide general information. The content
+            is not intended to substitute professional advice.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Second Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>All Rights Reserved India Certify © 2024</p>
+        <div class="payment-info">
+          <span>Secured Payments</span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1280px-UPI-Logo-vector.svg.png"
+            alt="UPI"
+          />
+        </div>
+      </div>
+    </footer>
+
+
     <script src="script.js"></script>
     <script
       data-cfasync="false"
