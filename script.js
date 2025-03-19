@@ -556,48 +556,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Active section highlighting
   const sections = document.querySelectorAll(".content-section");
-  const sections1 = document.querySelectorAll(".content-section1");
-  const sections2 = document.querySelectorAll(".content-section2");
   const navHeight = document.querySelector(".sticky-nav").offsetHeight;
 
   function setActiveSection() {
     const scrollPosition = window.scrollY + navHeight + 100;
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute("id");
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("data-section") === sectionId) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-    sections1.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute("id");
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("data-section") === sectionId) {
-            link.classList.add("active");
-          }
-        });
-      }
-    });
-    sections2.forEach((section) => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute("id");
@@ -1085,9 +1049,6 @@ document.addEventListener("DOMContentLoaded", function () {
     formContainer.classList.add("visible");
   }, 100);
 
-  // Initialize Lucide icons
-  lucide.createIcons();
-
   // GST Eligibility Checker
   const checkEligibilityBtn = document.getElementById("checkEligibilityBtn");
   const eligibilityResult = document.getElementById("eligibilityResult");
@@ -1156,6 +1117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100);
   });
 });
+lucide.createIcons();
 
 document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll(".faq-item");
@@ -1175,14 +1137,14 @@ document.addEventListener("DOMContentLoaded", () => {
       item.classList.toggle("active");
     });
   });
+});
 
-  // Add smooth scroll for CTA buttons
-  const ctaButtons = document.querySelectorAll(".indiacerty-cta button");
-  ctaButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      // Add your button click handling logic here
-      console.log("Button clicked:", button.textContent);
-    });
+// Add smooth scroll for CTA buttons
+const ctaButtons = document.querySelectorAll(".indiacerty-cta button");
+ctaButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    // Add your button click handling logic here
+    console.log("Button clicked:", button.textContent);
   });
 });
