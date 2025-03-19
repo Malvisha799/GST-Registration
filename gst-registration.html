@@ -36,6 +36,7 @@
     <!-- Include Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
+  
   <body
     class="bg-white"
     data-spy="scroll"
@@ -44,7 +45,7 @@
   >
     <div class="alt-nav">
       <nav
-        class="bg-white navbar navbar-expand-sm font-18 font-weight-400 navbar-light"
+        class="bg-white navbar navbar-expand-sm navbar-light"
         id="navbar_top"
       >
         <div class="container px-0">
@@ -82,7 +83,7 @@
                 <a class="navbar-brand" href="/"
                   ><span class="India Certify"></span>
                   <img
-                    src="logo.svg"
+                    src="/images/logo.svg"
                     height="38"
                     alt="India Certify logo"
                   />
@@ -96,7 +97,7 @@
             id="navbar_right"
           >
             <div
-              class="font-18 navbar-container main-menu-content"
+              class="navbar-container main-menu-content"
               data-menu="menu-container"
             >
               <ul
@@ -241,14 +242,6 @@
                       <div class="rightSection">
                         <h3 id="sectionTitle">Business Registration</h3>
                         <ul id="sectionList">
-                          <li>Private Limited Company</li>
-                          <li>Limited Liability Partnership</li>
-                          <li>One Person Company</li>
-                          <li>Sole Proprietorship</li>
-                          <li>Nidhi Company</li>
-                          <li>Producer Company</li>
-                          <li>Partnership Firm</li>
-                          <li>Startup India Registration</li>
                         </ul>
                       </div>
                     </div>
@@ -365,13 +358,6 @@
                       <div class="rightSection">
                         <h3 id="sectionTitle">GST and Other Indirect Tax</h3>
                         <ul id="sectionList">
-                          <li>GST Registration</li>
-                          <li>GST Filing</li>
-                          <li>GST Login Portal</li>
-                          <li>HSN Code Finder</li>
-                          <li>GST Cancellation and Revocation</li>
-                          <li>Indirect Tax</li>
-                          <li>RoDTEP</li>
                         </ul>
                       </div>
                     </div>
@@ -880,7 +866,6 @@
 
     <!-- Hero Section with GST Registration Button -->
     <div class="relative bg-gray-900 text-white">
-      <!-- <div class="absolute py-10"></div> -->
       <div class="hero">
         <div class="grid lg:grid-cols-2 gap-12">
           <div>
@@ -923,7 +908,7 @@
                 <h4 class="font-semibold text-white">Check GST Eligibility</h4>
               </div>
               <div class="eligibility-checker-content">
-                <p>
+                <p style="font-size: 1.11rem; margin-bottom: 20px;">
                   Find out if your business needs to register for GST based on
                   your business type and turnover.
                 </p>
@@ -1284,7 +1269,6 @@
 
             <div class="termsandcondition">
               <h6>Terms & conditions</h6>
-
               <p>
                 <strong>Note:</strong> All documents must be self-attested by
                 the applicant.
@@ -1777,19 +1761,13 @@
           <button class="nav-link active" data-section="overview">
             Overview
           </button>
-          <button class="nav-link" data-section="definition">Definition</button>
+          <button class="nav-link" data-section="definition">Key Features</button>
           <button class="nav-link" data-section="eligibility">
             Eligibility
-          </button>
-          <button class="nav-link" data-section="documents">
-            ----------------
           </button>
           <button class="nav-link" data-section="benefits">Benefits</button>
           <button class="nav-link" data-section="process">
             Registration Process
-          </button>
-          <button class="nav-link" data-section="compliance">
-            Compliance Requirements
           </button>
           <button class="nav-link" data-section="why">Why IndiaCertify?</button>
           <button class="nav-link" data-section="faqs">FAQs</button>
@@ -1800,28 +1778,27 @@
     <!-- Content Sections -->
     <div class="container">
       <section id="overview" class="content-section">
-        <h2>Shop and Establishment Certificate - An Overview</h2>
+        <h2>GST Registration Certificate - An Overview</h2>
         <p>
-          The Shop and Establishment License, also known as the Shop License or
-          Gumasta License registration, is a mandatory legal document for
-          businesses operating in India, including private limited companies,
-          retail shops, and service providers. Issued by the respective state
-          authority under the Shops and Establishments Act, this certificate
-          ensures businesses comply with key labor laws, including working
-          hours, employee rights, and workplace conditions.
+          GST registration is the process by which a business obtains a unique
+          identification number, known as a GSTIN (Goods and Services Tax Identification Number),
+          making it liable to pay Goods and Services Tax (GST) in India. According to the Central
+          Goods and Services Tax Act of 2017, businesses with an annual turnover exceeding
+          ₹40 lakh (or ₹20 lakh in specific special category states) are required to register as
+          taxable entities. The GSTIN, a 15-digit number, uniquely identifies each taxpayer under
+          the GST framework and allows authorities to monitor transactions and related data effectively.
         </p>
         <p>
-          The Establishment Act Registration must be completed to ensure
-          adherence to the regulations governing the employment of children,
-          working conditions, and regulation of employment. The registration
-          process involves submitting necessary documents such as the PAN card,
-          address proof, and an application form, all of which are critical to
-          legally operate within the state.
+          GST, or Goods and Services Tax, is a destination-based, multi-stage, indirect tax that
+          replaces various other taxes, including VAT and excise duties. Under the GST Act of 2017,
+          businesses that previously paid service tax, excise duty, or VAT must now register for GST.
+          Additionally, GST registration is mandatory for eCommerce sellers regardless of turnover.
         </p>
+        
       </section>
 
-      <section id="definition" class="content-section1">
-        <h2>Definition</h2>
+      <section id="definition" class="content-section">
+        <h2>Key Features</h2>
         <p>
           A Shop and Establishment Certificate is a legal document that
           registers commercial establishments with the Labor Department of the
@@ -1846,33 +1823,7 @@
         </ul>
       </section>
 
-      <!-- <section id="documents" class="content-section">
-        <h2>Documents Required</h2>
-        <div class="document-groups">
-          <div class="document-group">
-            <h3>Basic Documents</h3>
-            <ul>
-              <li>Proof of business ownership or rent agreement</li>
-              <li>PAN card of the business and proprietor</li>
-              <li>Aadhaar card of the proprietor</li>
-              <li>Passport size photographs</li>
-              <li>Business registration certificate</li>
-            </ul>
-          </div>
-          <div class="document-group">
-            <h3>Additional Documents</h3>
-            <ul>
-              <li>NOC from the property owner (if rented)</li>
-              <li>Partnership deed (for partnership firms)</li>
-              <li>Certificate of Incorporation (for companies)</li>
-              <li>Fire safety certificate (if applicable)</li>
-              <li>GST registration (if applicable)</li>
-            </ul>
-          </div>
-        </div>
-      </section> -->
-
-      <section id="benefits" class="content-section1">
+      <section id="benefits" class="content-section">
         <h2>Benefits of GST Registration</h2>
         <div class="benefits-grid">
           <!-- Benefits Section -->
@@ -1921,7 +1872,7 @@
         </div>
       </section>
 
-      <section id="process" class="content-section2">
+      <section id="process" class="content-section">
         <h2>Registration Process</h2>
         
           <!-- Step-by-Step Guide Section -->
@@ -1938,7 +1889,7 @@
               </p>
             </div>
           </div>
-          <main class="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 py-10">
+          <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
               <div class="relative">
                 <div class="md:block step-connector"></div>
                 <div
@@ -2096,61 +2047,7 @@
         </div>
       </section>
 
-      <section id="compliance" class="content-section">
-        <h2>Compliance Requirements</h2>
-        <div class="compliance-groups">
-          <div class="compliance-group">
-            <h3>Regular Compliance</h3>
-            <ul>
-              <li>Display of certificate at a prominent location</li>
-              <li>Maintenance of employee records</li>
-              <li>Adherence to working hours regulations</li>
-              <li>Regular renewal of certificate</li>
-            </ul>
-          </div>
-          <div class="compliance-group">
-            <h3>Annual Requirements</h3>
-            <ul>
-              <li>Annual returns filing</li>
-              <li>Update of employee information</li>
-              <li>Renewal of certifications</li>
-              <li>Compliance with labor law amendments</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="why" class="content-section1">
-        <h2>Why IndiaCertify?</h2>
-        <div class="why-grid">
-          <div class="why-card">
-            <h3>Expert Assistance</h3>
-            <ul>
-              <li>Dedicated legal experts</li>
-              <li>End-to-end support</li>
-              <li>Quick resolution of queries</li>
-            </ul>
-          </div>
-          <div class="why-card">
-            <h3>Hassle-free Process</h3>
-            <ul>
-              <li>Online documentation</li>
-              <li>Regular status updates</li>
-              <li>Minimal paperwork</li>
-            </ul>
-          </div>
-          <div class="why-card">
-            <h3>Value for Money</h3>
-            <ul>
-              <li>Competitive pricing</li>
-              <li>Transparent process</li>
-              <li>No hidden charges</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="faqs" class="content-section2">
+      <section id="why" class="content-section">
         <div class="indiacerty-section">
           <div class="indiacerty-content">
             <div class="indiacerty-image">
@@ -2168,6 +2065,9 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="faqs" class="content-section">
         <div class="containerfooterabove">
           <div class="headerlast">
             <h1>Frequently Asked Questions</h1>
