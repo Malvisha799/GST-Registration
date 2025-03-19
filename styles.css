@@ -158,7 +158,7 @@ button:focus {
 .rightSection {
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: 16px;
+  /* padding-bottom: 16px; */
   flex-grow: 1;
   background-color: #ffffff;
   max-height: 600px;
@@ -202,7 +202,7 @@ button:focus {
 #sectionList {
   max-height: 150px;
   margin-top: 10px;
-  padding: 0;
+  padding: 4px;
   list-style: none;
 }
 .menuItem img {
@@ -258,18 +258,19 @@ button:focus {
   list-style-type: none;
 }
 .rightSection ul li {
-  margin-bottom: 6px;
+  /* margin-bottom: 6px; */
   font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   max-width: 380px;
-  padding: 4px;
+  /* padding: 4px; */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   border-bottom: 1px solid #f8f8f8;
 }
+
 .rightSection ul li span {
   display: inline-block;
   width: 300px;
@@ -1978,7 +1979,6 @@ ul {
   /* width: 100%; */
   max-width: 380px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
@@ -1989,12 +1989,12 @@ ul {
   left: 0;
   right: 0;
   /* height: 6px; */
-  background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef);
+  /* background: linear-gradient(90deg, #6366f1, #8b5cf6, #d946ef); */
   z-index: 1;
 }
 
 .eligibility-checker-header {
-  background: linear-gradient(90deg, #4338ca 0%, #4f46e5 100%);
+  background: linear-gradient(90deg, #173069 0%,#2a57be 100%);
   padding: 0.5rem 1.5rem;
   display: flex;
   align-items: center;
@@ -2057,7 +2057,7 @@ ul {
 }
 
 #checkEligibilityBtn {
-  background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8);
+  background: linear-gradient(135deg, #173069 0%,#2a57be 100%);
   color: white;
   font-weight: 600;
   border-radius: 10px;
@@ -2071,7 +2071,7 @@ ul {
   letter-spacing: 0.025em;
   text-transform: uppercase;
   font-size: 0.9rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 #checkEligibilityBtn:hover {
@@ -2317,7 +2317,7 @@ select.w-full {
   overflow: hidden;
 }
 
-.gst-online-section::before {
+/* .gst-online-section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -2325,7 +2325,7 @@ select.w-full {
   width: 100%;
   height: 5px;
   background: var(--gradient-primary);
-}
+} */
 
 .gst-online-header {
   display: flex;
@@ -2760,7 +2760,7 @@ select.w-full {
 .director-proof-section h4 {
   font-size: 1.125rem;
   color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.9rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2789,31 +2789,30 @@ select.w-full {
 }
 
 .director-proof-list li {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-medium);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--gray-200);
-  /* border-right: 1px solid var(--gray-200); */
 }
 .termsandcondition ul {
   list-style: none; /* Remove default bullets */
   padding-left: 0;
   display: flex; /* Arrange list items in a row */
   flex-wrap: wrap; /* Wrap if content overflows */
-  gap: 0.2rem;
 }
 .termsandcondition h6 {
   font-size: 1.125rem;
   color: var(--text-dark);
-  /* margin-bottom: 1.5rem; */
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.2rem;
+  margin-bottom: 0;
 }
-
+.termsandcondition p {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
 .termsandcondition ul li::before {
   content: "•"; /* Bullet Point */
   margin-right: 10px;
@@ -2824,6 +2823,7 @@ select.w-full {
 .termsandcondition ul li {
   display: flex;
   align-items: center; /* Align text and bullet */
+  font-size: 0.9rem;
 }
 
 .proof-check {
@@ -3484,7 +3484,7 @@ input:checked + .slider:before {
 .footer {
   background-color: var(--gray-800);
   color: var(--white);
-  padding: 2rem 0 0;
+  padding: 2rem 1rem 0;
   margin-top: 3rem;
 }
 
@@ -3620,11 +3620,12 @@ input:checked + .slider:before {
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   overflow-x: auto;
-  padding: 0.5rem 0;
+  padding: 0 1rem;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  justify-content: center;
 }
 
 .nav-links::-webkit-scrollbar {
@@ -3635,13 +3636,14 @@ input:checked + .slider:before {
   padding: 1rem 0.25rem;
   border: none;
   background: none;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 1rem;
+  /* font-weight: 200; */
   color: #6b7280;
   border-bottom: 2px solid transparent;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.2s;
+  margin-left: 0;
 }
 
 .nav-link:hover {
@@ -3657,7 +3659,7 @@ input:checked + .slider:before {
 /* Content Sections */
 .content-section {
   padding: 2rem 0;
-  width: 50%;
+  width: 100%;
 }
 
 .content-section h2 {
@@ -3672,7 +3674,7 @@ input:checked + .slider:before {
   margin-bottom: 1rem;
 }
 
-.content-section1 {
+/* .content-section1 {
   padding: 2rem 0;
   width: 50%;
   margin-left: 600px;
@@ -3681,14 +3683,14 @@ input:checked + .slider:before {
 .content-section1 h2 {
   font-size: 1.875rem;
   font-weight: bold;
-  margin-bottom: 0.1rem;
+  margin-bottom: 1.5rem;
   color: #1a1a1a;
 }
 
 .content-section1 p {
   color: #4b5563;
   margin-bottom: 1rem;
-}
+} */
 
 .content-section ul {
   list-style-type: disc;
@@ -3743,25 +3745,6 @@ input:checked + .slider:before {
 
 .process-steps li {
   margin-bottom: 1.5rem;
-}
-
-/* Why Cards */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.why-card {
-  background-color: #f0f7ff;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-}
-
-.why-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 /* FAQs section */
@@ -3837,7 +3820,7 @@ input:checked + .slider:before {
 
 .faq-item.active .faq-answer {
   max-height: 500px;
-  padding: 1.5rem;
+  padding: 0.2rem;
 }
 
 /* IndiaCertify Section Styles */
@@ -3995,7 +3978,7 @@ input:checked + .slider:before {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -4107,7 +4090,7 @@ input:checked + .slider:before {
   text-align: center;
   background-color: #1a237e;
   color: white;
-  padding: 0.5rem;
+  padding: 0.8rem;
 }
 
 .payment-info {
