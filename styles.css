@@ -1065,7 +1065,7 @@ ul {
 }
 
 .btn-blue {
-  background-color: transparent;
+  background-color:none;
 }
 
 .btn-blue:hover {
@@ -1073,8 +1073,8 @@ ul {
 }
 
 .btn-gray {
-  background-color: transparent;
-  color: white;
+  background-color: none;
+  color: black;
 }
 
 .btn-gray:hover {
@@ -1197,7 +1197,7 @@ ul {
 }
 
 .bg-orange-500 {
-  background-color: #f97316;
+  background-color: red;
 }
 
 .bg-gray-50 {
@@ -1412,7 +1412,7 @@ ul {
 }
 
 .text-xl {
-  font-size: 1.25rem;
+  font-size: 0.1rem;
   line-height: 1.75rem;
 }
 
@@ -3550,11 +3550,11 @@ input:checked + .slider:before {
 /* Responsive Styles */
 @media (min-width: 640px) {
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 
   .hero p {
-    font-size: 1.25rem;
+    font-size: 1.12rem;
   }
 
   .form-grid {
